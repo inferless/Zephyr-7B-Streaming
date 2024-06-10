@@ -41,8 +41,8 @@ stream_output_handler.finalise_streamed_output()
 
 ### Key Advantages of Using SSE
 
-1.Simplicity: SSE is straightforward to implement both on the server and the client side. Unlike WebSockets, which require a special protocol and server setup, SSE works over standard HTTP and can be handled by traditional web servers without any special configuration.
+1. Simplicity: SSE is straightforward to implement both on the server and the client side. Unlike WebSockets, which require a special protocol and server setup, SSE works over standard HTTP and can be handled by traditional web servers without any special configuration.
 
-2.Efficient Real-time Communication: SSE is designed for scenarios where the server needs to push data to the client. It’s very efficient for use cases like live notifications, feeds, and real-time analytics dashboards where updates are frequent and originate from the server.
+2. Efficient Real-time Communication: SSE is designed for scenarios where the server needs to push data to the client. It’s very efficient for use cases like live notifications, feeds, and real-time analytics dashboards where updates are frequent and originate from the server.
 
 3. Built-in Reconnection: SSE has automatic reconnection support. If the connection between the client and server is lost, the client will automatically attempt to reestablish the connection after a timeout. This makes it resilient and ensures continuous data flow without manual intervention.
