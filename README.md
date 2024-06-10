@@ -24,6 +24,7 @@ input\_schema.py
 IS_STREAMING_OUTPUT = True
 ```
 
+```
 in app.py 
 
 # Sent the partial response as an event 
