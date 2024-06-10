@@ -11,8 +11,7 @@ Server-Sent Events (SSE) can be enabled and configured independently for each mo
 
 #### Create a custom runtime
 
-To get started with importing the template for the streaming create a Custom runtime with the 'inferless-runtime-config.yaml'
-
+To get started with importing the template for the streaming create a Custom runtime with the 'inferless-runtime-config.yaml' also use cuda_version as **12.4.1**
 Define  IS_STREAMING_OUTPUT in the **input\_schema.py**
 
 ```python
