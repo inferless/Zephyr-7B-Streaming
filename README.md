@@ -9,6 +9,9 @@ Server-Sent Events (SSE) can be enabled and configured independently for each mo
 - The shape of the parameter should be [1], multiple inputs or objects are by using "json.dumps(object)" and then passed as string 
 - Output should have the same schema in all the iterative responses 
 
+#### Create a custom runtime
+
+To get started with importing the template for the streaming create a Custom runtime with the 'inferless-runtime-config.yaml'
 
 Define  IS_STREAMING_OUTPUT in the **input\_schema.py**
 
