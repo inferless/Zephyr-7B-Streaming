@@ -1,3 +1,6 @@
+import os
+os.environ["HF_HUB_ENABLE_HF_TRANSFER"]='1'
+from huggingface_hub import snapshot_download
 import json
 import numpy as np
 import torch
@@ -6,13 +9,15 @@ from threading import Thread
 from transformers import AutoTokenizer, TextIteratorStreamer
 from awq import AutoAWQForCausalLM
 
-MODEL_NAME = "TheBloke/zephyr-7B-beta-AWQ"
+
 
 class InferlessPythonModel:
 
     def initialize(self):
-        self.model = AutoAWQForCausalLM.from_quantized(MODEL_NAME, fuse_layers=False, version="GEMV")
-        self.tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+        model_id = "TheBloke/zephyr-7B-beta-AWQ"
+        snapshot_download(repo_id=model_id,allow_patterns=["*.safetensors"])
+        self.model = AutoAWQForCausalLM.from_quantized(model_id, fuse_layers=False, version="GEMV")
+        self.tokenizer = AutoTokenizer.from_pretrained(model_id)
         self.streamer = TextIteratorStreamer(self.tokenizer, skip_prompt=True, skip_special_tokens=True)
 
     def infer(self, inputs, stream_output_handler):
